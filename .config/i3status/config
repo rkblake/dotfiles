@@ -1,0 +1,44 @@
+general {
+	colors = false
+	interval = 5
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "disk /"
+#order += "load"
+order += "memory"
+order += "tztime local"
+
+wireless _first_ {
+	format_up = " 直%ip "
+	format_down = " 睊"
+}
+
+ethernet _first_ {
+	format_up = "  %ip "
+	format_down = "  "
+}
+
+battery all {
+	format = "  %percentage "
+}
+
+disk "/" {
+	format = "  %avail "
+}
+
+load { 
+	format = " ﲮ %1min "
+}
+
+memory {
+	format = "  %available "
+	threshold_degraded = "  1Gb "
+	format_degraded = "  < 1Gb!! "
+}
+
+tztime local {
+	format = " %m/%d/%Y %H:%M  "
+}
